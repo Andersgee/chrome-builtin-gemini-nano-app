@@ -24,6 +24,7 @@ export function WindowAiChat() {
     if (input && input.length > 0) {
       setMessages((prev) => [...prev, { text: input, author: "me" }]);
       setResponseIsLoading(true);
+      inputRef.current.value = "";
       const res = await session.prompt(input);
       setMessages((prev) => [...prev, { text: res, author: "ai" }]);
       setResponseIsLoading(false);
@@ -40,7 +41,12 @@ export function WindowAiChat() {
       >
         <label>
           your prompt
-          <input type="text" placeholder="who created you?" ref={inputRef} className="w-full border p-2"></input>
+          <input
+            type="text"
+            placeholder="message"
+            ref={inputRef}
+            className="w-full border p-2 placeholder:text-neutral-400"
+          ></input>
         </label>
       </form>
       <div className="h-8">{responseIsLoading ? "thinking..." : ""}</div>

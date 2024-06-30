@@ -5,8 +5,8 @@ export function useAITextSession() {
   useEffect(() => {
     createTextSession()
       .then(setTextSession)
-      .catch(() => {
-        //ignore
+      .catch((err) => {
+        console.log(err);
       });
   }, []);
   return textSession;
