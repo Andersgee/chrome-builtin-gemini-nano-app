@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Gemini nano app",
-  description: "chrome builtin gemini nano app",
+  title: "browser built-in ai chat app",
+  description: "browser built-in ai chat app",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

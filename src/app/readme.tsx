@@ -30,6 +30,8 @@ export function UnsupportedReadme({ className }: Props) {
           click on <code>Check for update</code> button. wait for that component to download
         </li>
         <li>Restart your chrome browser</li>
+
+        <li>This website will now be a chat instead</li>
       </ol>
     </div>
   );
