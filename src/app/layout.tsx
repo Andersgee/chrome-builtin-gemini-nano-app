@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "gemini nano app",
+  title: "Gemini nano app",
   description: "chrome builtin gemini nano app",
 };
 
