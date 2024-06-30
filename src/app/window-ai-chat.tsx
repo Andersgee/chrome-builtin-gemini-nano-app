@@ -8,17 +8,6 @@ import { cn } from "#src/utils/cn";
 
 type Message = { text: string; author: "me" | "ai" };
 
-const INITIAL_MESSAGES: Message[] = [
-  {
-    text: "some ai text response",
-    author: "ai",
-  },
-  {
-    text: "some user question?",
-    author: "me",
-  },
-];
-
 export function WindowAiChat() {
   const supported = useHasWindowAi();
   const session = useAITextSession();
@@ -28,7 +17,7 @@ export function WindowAiChat() {
 
   if (supported === null) return null;
   if (supported === false) return <UnsupportedReadme />;
-  if (session === null) return null;
+  if (!session) return <div>starting up a local text session</div>;
 
   const handleInput = async () => {
     const input = inputRef.current?.value;
